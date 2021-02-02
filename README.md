@@ -1,1 +1,1 @@
-# Sentiment Analysis Of Twitter Data Using Deep LEARNING
+# Sentiment Analysis Of Twitter Data Using Deep Learning
