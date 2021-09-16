@@ -1,0 +1,43 @@
+<html>
+<title >Twitter Sentiment Analysis</title>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style/index12.css') }}">
+
+</head>
+<body  class="body1"> 
+<form  method="POST">
+  <div class="container">
+    <h1 align = 'center' style="color:black; font-size:40px" >Twitter Sentiment Analysis</h1>
+
+    <p align = 'center'style="font-size:25px">Type your tweet here</p>
+    <form action='/predict' method="post">
+	<p align = "center">
+	<input type="text"  align = "Center" placeholder="Enter the tweet" name="tweet" id="rcorners1" required>
+	</p>
+	<table align='center' style='padding:0.5px; border-spacing: 10px; font-size:20 px'>	
+	<tr>
+	<td colspan="2" align="center" ><button class="button5" type="submit" name="predict" align='center' value="Predict" onclick="window.location.href = 'G:\Gayatri Files\Smartbridge\TwitterSentimentAnalysis\templates\index.html'" ><font size="4">Predict</font></button></td>
+	</tr>
+	<tr>
+	<td colspan="2" align = "center"><b>{{ypred}}</b></td>
+	</tr>
+	</table>
+	</form>
+     <!--<img src="/static/happy.png" alt="Positive" class="tab3">-->
+	<p>
+	{% if ypred == "Positive Tweet" %}
+	<p>Positive</p>
+		<img src="/static/1.jpg", alt="Positive" class="tab3">
+    {% else %}
+    {% if ypred == "Negative Tweet" %}
+    <p>Negative</p>
+        <img src="/static/2.jpg" alt="Negative" class="tab3">
+    {% else %}
+        <img src="/static/3.jpg" alt="Emotion" class="tab3">
+    {% endif %}
+    {% endif %}
+	</p>
+    
+  </div>
+
+</form>
